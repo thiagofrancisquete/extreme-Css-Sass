@@ -1,0 +1,244 @@
+/*
+
+colors: 
+light green: #7ed56f
+medium green: #55c57a
+dark green: #28b485
+
+*/
+
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* config padrao */
+body {
+  color: #777;
+  font-family: 'Lato', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 0px;
+}
+
+/* começo do header */
+.header {
+  background-image: linear-gradient(to right bottom, #7ed56fcc, #28b485cc),
+  url(../img/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  height: 95vh;
+  position: relative;
+
+  /* topo esquerda -> direita -> baixo -> esquerda */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* div do logo  */
+.logo-box {
+  left: 40px;
+  position: absolute;
+  top: 40px;
+}
+
+/* img do logo */
+.logo {
+  height: 35px;
+}
+
+/* box principal  */
+.heading-text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* div texto  */
+.heading-primary {
+  color: #fff;
+
+  backface-visibility: hidden;
+  margin-bottom: 40px;
+}
+
+/* texto principal  */
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  /* animacao  */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/* texto secundario  */
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 17.4px;
+  font-weight: 700;
+  
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/* animacao dos textos  */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0)
+  }
+}
+
+/* botao geral */
+.btn:link, .btn:visited {
+  border-radius: 100px;
+  display: inline-block;
+  padding: 12px 40px; /* o tamanho se da aqui  */
+  transition: all .2s;
+  text-decoration: none;
+  position: relative;
+
+  animation-name: moveInBtn 2s;
+}
+
+.btn:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* botao branco  */
+.btn-white {
+  background-color: #fff;
+  color: #28b485;
+  letter-spacing: 1.5px;
+  font-weight: 750;
+} 
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* tamanho do elemento de tras  */
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  /* efeito de crescimento se da aqui  */
+  transform: scaleX(1.4) scaleY(1.6);
+  /* desaparecendo  */
+  opacity: 0;
+}
+
+
+@keyframes moveInBtn {
+  0%{
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(1);
+  }
+}
+
+.btn-animated {
+  animation: moveInBtn .5s ease-out .4s;
+  /* estilos nao serao aplicados enquanto animacao nao comeca  */
+  animation-fill-mode: backwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* barra de rolagem personalizada */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7ed56f, #28b485);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #28b485, #7ed56f);
+}
