@@ -8,18 +8,21 @@ dark green: #28b485
 */
 
 /* reset */
-* {
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%; /* padrao do browser é 16 / 10px = %  */
 }
 
 /* config padrao */
 body {
+  box-sizing: border-box;
   color: #777;
   font-family: 'Lato', serif;
   font-size: 1.6rem;
@@ -41,37 +44,36 @@ body {
 }
 
 /* div do logo  */
-.logo-box {
+.header__logo-box {
   left: 4rem;
   position: absolute;
   top: 4rem;
 }
 
 /* img do logo */
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
 /* box principal  */
-.heading-text-box {
-  position: absolute;
-  top: 40%;
+.header__text-box {
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
+  position: absolute;
   text-align: center;
+  text-transform: uppercase;
+  top: 40%;
+  transform: translate(-50%, -50%);
 }
 
 /* div texto  */
 .heading-primary {
-  color: #fff;
-
   backface-visibility: hidden;
+  color: #fff;
   margin-bottom: 4rem;
 }
 
 /* texto principal  */
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -84,7 +86,7 @@ body {
 }
 
 /* texto secundario  */
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   letter-spacing: 1.75rem;
@@ -151,7 +153,7 @@ body {
 }
 
 /* botao branco  */
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #28b485;
   letter-spacing: .1rem;
@@ -171,7 +173,7 @@ body {
   transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -194,7 +196,7 @@ body {
   }
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBtn .5s ease-out .4s;
   /* estilos nao serao aplicados enquanto animacao nao comeca  */
   animation-fill-mode: backwards;
