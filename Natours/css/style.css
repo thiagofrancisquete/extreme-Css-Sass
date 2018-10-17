@@ -14,14 +14,17 @@ dark green: #28b485
   padding: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 /* config padrao */
 body {
   color: #777;
   font-family: 'Lato', serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.7;
-  padding: 0px;
 }
 
 /* começo do header */
@@ -39,14 +42,14 @@ body {
 
 /* div do logo  */
 .logo-box {
-  left: 40px;
+  left: 4rem;
   position: absolute;
-  top: 40px;
+  top: 4rem;
 }
 
 /* img do logo */
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 /* box principal  */
@@ -64,15 +67,15 @@ body {
   color: #fff;
 
   backface-visibility: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 
 /* texto principal  */
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   /* animacao  */
   animation-name: moveInLeft;
@@ -83,8 +86,8 @@ body {
 /* texto secundario  */
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
-  letter-spacing: 17.4px;
+  font-size: 2rem;
+  letter-spacing: 1.75rem;
   font-weight: 700;
   
   animation-name: moveInRight;
@@ -96,11 +99,11 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px)
+    transform: translateX(-10rem)
   }
   
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   
   100% {
@@ -112,11 +115,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   
   100% {
@@ -127,9 +130,9 @@ body {
 
 /* botao geral */
 .btn:link, .btn:visited {
-  border-radius: 100px;
+  border-radius: 10rem;
   display: inline-block;
-  padding: 12px 40px; /* o tamanho se da aqui  */
+  padding: 1.2rem 4rem; /* o tamanho se da aqui  */
   transition: all .2s;
   text-decoration: none;
   position: relative;
@@ -138,20 +141,20 @@ body {
 }
 
 .btn:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  transform: translateY(-.5rem);
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 /* botao branco  */
 .btn-white {
   background-color: #fff;
   color: #28b485;
-  letter-spacing: 1.5px;
+  letter-spacing: .1rem;
   font-weight: 750;
 } 
 
@@ -160,7 +163,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -183,7 +186,7 @@ body {
 @keyframes moveInBtn {
   0%{
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(8rem);
   }
   100%{
     opacity: 1;
